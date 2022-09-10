@@ -20,7 +20,7 @@
 
 		<section class="section-game hidden">
 			<div class="hangman">
-				<img src="images/1.jpg" alt="">
+				<img id="img-ahorcado" src="images/img0.png" alt="">
 				<div class="word">
 				</div>
 			</div>
@@ -57,6 +57,12 @@
 				<button class="add-word" id="btn-nuevojuego"  onclick="nuevoJuego()">Nuevo juego</button>
 				<button class="add-word" id="btn-desistir" onclick="desistir()">Desistir</button>
 			</div>
+
+			<div class="messageLoser hidden" >
+				<p>¡¡Perdiste!!</p>
+				<p id="palabraSecreta"></p>
+				<button class="btn-aceptar" onclick="aceptar()">Aceptar</button>
+			</div>
 		</section>
 
 		<section class="section-add-words hidden">
@@ -71,7 +77,10 @@
 				<button id="btn-cancelar" class="add-word" onclick="cancelar()">Cancelar</button>
 			</div>
 		</section>
-		
+	<footer id="foo">
+		Challenge by <a href="https://www.aluracursos.com/">Alura latam</a>.
+		Coded by <a href="https://www.linkedin.com/in/cristian-ledesma-58b628134/">Cristian Ledesma</a>.
+	</footer>
 	</main>
 	<script src="scripts.js"></script>
 </body>

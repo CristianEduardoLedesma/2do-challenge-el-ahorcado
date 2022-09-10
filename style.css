@@ -90,8 +90,6 @@ main {
 	color: #bf0000;
 	font-family: 'Kanit', sans-serif;
 	transition: 0.6s;
-
-
 }
 
 .add-word:hover {
@@ -213,6 +211,56 @@ main {
 	flex-direction: column;
 }
 
+footer {
+	text-align: center;
+	margin-top: 20px;
+	font-family: 'Kanit', sans-serif;
+	color: white;
+}
+footer a {
+	font-family: 'Kanit', sans-serif;
+	color: #6089ff;
+}
+
+
+.messageLoser {
+	background: linear-gradient( #6089ff,#003adf,#001960,black);
+	box-shadow: 0px 10px 16px -4px rgba(0,0,0,0.9);
+	border-radius: 35px;
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	top: 250px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.messageLoser p {
+	font-size: 25px;
+	color: white;
+	font-family: 'Kanit', sans-serif;
+}
+.messageLoser button {
+	border: none;
+	margin: 20px 0;
+	width: 150px;
+	height: 50px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #bf0000;
+	font-family: 'Kanit', sans-serif;
+	transition: 0.6s;
+	border-radius: 35px;
+}
+
+.messageLoser button:hover {	
+	cursor: pointer;
+	color: #ff0000;
+	box-shadow: 0px 10px 16px -4px rgba(0,0,0,0.9);
+	transform: scale(1.1);
+}
+
 .hidden {
 	display: none;
 }
@@ -220,18 +268,6 @@ main {
 @media (max-width: 655px) {
 	#title {
 		font-size: 60px;
-	}
-	.start {
-		width: 208px;
-		height: 70px;
-		font-size: 25px;
-
-	}
-
-	.add-word {
-		width: 200px;
-		height: 57px;
-		font-size: 15px;
 	}
 }
 
@@ -315,6 +351,15 @@ main {
 	
 	.buttons-game button {
 		margin: 10px;
+	}
+
+	#img-ahorcado {
+		width: 50%;
+		height: 50%;
+	}
+
+	.hangman .word {
+		font-size: 30px;
 	}
 
 }
