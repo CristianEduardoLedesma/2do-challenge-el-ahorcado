@@ -438,16 +438,23 @@ footer a {
 		font-family: 'Kanit', sans-serif;
 	}
 	.messageLoser button {
-		border: none;
-		margin: 20px 0;
 		width: 150px;
 		height: 50px;
-		text-decoration: none;
 		font-size: 20px;
-		color: #bf0000;
+	}
+
+	.messageWinner {
+		width: 250px;
+	}
+	.messageWinner p {
+		font-size:15px;
+		color: white;
 		font-family: 'Kanit', sans-serif;
-		transition: 0.6s;
-		border-radius: 35px;
+	}
+	.messageWinner button {
+		width: 150px;
+		height: 50px;
+		font-size: 20px;
 	}
 
 }
