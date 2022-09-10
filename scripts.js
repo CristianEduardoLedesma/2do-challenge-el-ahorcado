@@ -4,7 +4,7 @@ String.prototype.replaceAt = function(index, replacement) {
 }
 
 /*Vector de palabras */
-let palabras = ["JUEGO","PANTALLA","CONSOLA","CASA","MESA","SILLA"];
+let palabras = ["VERANO","PLAYA","JUEGO","PANTALLA","CONSOLA","CASA","MESA","SILLA","PUERTA","LENGUAJE","CODIGO","AUTO","MOTO","ARBOL","PANTALON","CAMISA"];
 
 // variables
 let palabra = "";
@@ -82,6 +82,8 @@ function desistir() {
 	musicbtn.play();
 	palabraSecreta.innerHTML = "La palabra era: " + palabra;
 	messageLoser.classList.remove("hidden")
+	songLoser.play();
+	songLoser.volume = 0.1;
 }
 
 function aceptar () {
