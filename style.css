@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;700&family=Kanit&family=Karla:wght@400;700&family=Lexend+Deca&family=Outfit:wght@300;500;600&family=Overpass:wght@400;700&family=Poppins:wght@200&family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+main {
+	min-height: 100vh; 
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: linear-gradient( #6089ff,#003adf,#001960,black);
+}
+
+.logo {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+}
+
+#title {
+	margin-bottom: 60px;
+	text-align: center;
+	font-size: 80px;
+	font-family: 'Kanit', sans-serif;
+	color: #6089ff;
+	text-shadow: 5px 5px 5px #000000;
+	letter-spacing: 3px;
+	background-color: #003adf;
+	border-radius: 30px;
+	padding: 20px 30px;
+	box-shadow: 0px 10px 16px -4px rgba(255,255,255,0.9);
+
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.buttons button {
+	margin-bottom: 30px;
+	border-radius: 30px;
+	box-shadow: 0px 10px 16px -4px rgba(0,0,0,0.37);
+	border: none;
+	transition: 0.5s;
+}
+
+.buttons-game {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+.buttons-game button {
+	margin: 20px;
+}
+
+.start {
+	width: 317px;
+	height: 100px;
+	background-color: #bf0000;	
+	text-decoration: none;
+	color: whitesmoke;
+	font-size: 35px;
+	font-family: 'Kanit', sans-serif;
+	transition: 0.6s;
+
+}
+
+ .start:hover {
+	cursor: pointer;
+	background-color: #ff0000;
+	box-shadow: 0px 10px 16px -4px rgba(0,0,0,0.9);
+	transform: scale(1.1);
+}
+
+.add-word {
+	width: 300px;
+	height: 75px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #bf0000;
+	font-family: 'Kanit', sans-serif;
+	transition: 0.6s;
+
+
+}
+
+.add-word:hover {
+	cursor: pointer;
+	color: #ff0000;
+	box-shadow: 0px 10px 16px -4px rgba(0,0,0,0.9);
+	transform: scale(1.1);
+}
+
+.buttons-game #btn-nuevojuego {
+	color: #006000;
+}
+
+.buttons-game #btn-add {
+	color: #006000;
+}
+.text-max {
+	align-self: flex-start;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.text-max p {
+	margin-left: 10px;
+	font-size: 18px;
+	color: whitesmoke;
+	font-family: 'Kanit', sans-serif;
+}
+
+.text textarea {
+	width: 800px;
+	height: 200px;
+	border-radius: 30px;
+	resize: none;
+	padding: 20px;
+	font-size: 30px;
+	margin-bottom: 10px;
+	font-family: 'Kanit', sans-serif;
+}
+
+.keyword {
+	margin-top: 10px;
+	width: 600px;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.letter {
+	margin: 3px;
+	font-family: 'Kanit', sans-serif;
+	font-size: 15px;
+	border-radius: 25%;
+	width: 30px;
+	height: 30px;
+	border: none;
+}
+
+.letter:hover {
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+.letterdisabled {
+	margin: 3px;
+	font-family: 'Kanit', sans-serif;
+	font-size: 15px;
+	border-radius: 25%;
+	width: 30px;
+	height: 30px;
+	border: none;
+	background-color: #bf0000;
+	color: white;
+	pointer-events: none;
+}
+
+.hangman {
+	margin-top: 50px;
+	background-color: white;
+	width: 800px;
+	height: 400px;
+	border-radius: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hangman img {
+	width: 70%;
+	height: 70%;
+}
+
+.hangman .word {
+	font-size: 50px;
+	color: #006000;
+}
+.section-start {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.section-game {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.section-add-words {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hidden {
+	display: none;
+}
+
+@media (max-width: 655px) {
+	#title {
+		font-size: 60px;
+	}
+	.start {
+		width: 208px;
+		height: 70px;
+		font-size: 25px;
+
+	}
+
+	.add-word {
+		width: 200px;
+		height: 57px;
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 480px) {
+	#title {
+		font-size: 40px;
+	}
+	.start {
+		width: 208px;
+		height: 70px;
+		font-size: 25px;
+
+	}
+
+	.add-word {
+		width: 200px;
+		height: 57px;
+		font-size: 15px;
+	}
+
+}
+
+@media (max-width: 930px) {
+	.hangman , .text textarea{
+		width: 600px;
+	}
+
+}
+
+@media (max-width: 730px) {
+	.hangman, .text textarea{
+		width: 400px;
+	}
+
+	.keyword {
+		width: 400px;
+
+	}
+
+}
+
+@media (max-width: 500px) {
+	.hangman,.text textarea {
+		width: 350px;
+	}
+
+	.keyword {
+		width: 350px;
+
+	}
+
+	.buttons-game {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.buttons-game button {
+		margin: 10px;
+	}
+
+}
+
+@media (max-width: 375px) {
+	.hangman,.text textarea{
+		width: 300px;
+	}
+
+	.keyword {
+		width: 300px;
+
+	}
+
+	.buttons-game {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	
+	.buttons-game button {
+		margin: 10px;
+	}
+
+}

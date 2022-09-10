@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Alura Challenge-Desafio 2-El ahorcado</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header><img class="logo" src="images/logo.png" alt="logo de alura"></header>
+	<main>
+		
+		<section class="section-start">
+			<h1 id="title">El ahorcado</h1>
+			<div class="buttons">
+				<button class="start" onclick="iniciarJuego()">Iniciar juego</button>
+				<button class="add-word" onclick="agregarPalabra()">Agregar nueva palabra</button>
+			</div>
+		</section>
+
+		<section class="section-game hidden">
+			<div class="hangman">
+				<img src="images/1.jpg" alt="">
+				<div class="word">
+				</div>
+			</div>
+			<div class="keyword">
+				<button class="letter">A</button>
+				<button class="letter">B</button>
+				<button class="letter">C</button>
+				<button class="letter">D</button>
+				<button class="letter">E</button>
+				<button class="letter">F</button>
+				<button class="letter">G</button>
+				<button class="letter">H</button>
+				<button class="letter">I</button>
+				<button class="letter">J</button>
+				<button class="letter">K</button>
+				<button class="letter">L</button>
+				<button class="letter">M</button>
+				<button class="letter">N</button>
+				<button class="letter">Ñ</button>
+				<button class="letter">O</button>
+				<button class="letter">P</button>
+				<button class="letter">Q</button>
+				<button class="letter">R</button>
+				<button class="letter">S</button>
+				<button class="letter">T</button>
+				<button class="letter">U</button>
+				<button class="letter">V</button>
+				<button class="letter">W</button>
+				<button class="letter">X</button>
+				<button class="letter">Y</button>
+				<button class="letter">Z</button>
+			</div>
+			<div class="buttons buttons-game">
+				<button class="add-word" id="btn-nuevojuego"  onclick="nuevoJuego()">Nuevo juego</button>
+				<button class="add-word" id="btn-desistir" onclick="desistir()">Desistir</button>
+			</div>
+		</section>
+
+		<section class="section-add-words hidden">
+			<div class="text">
+				<textarea id="input" maxlength="8" placeholder="Ingrese una palabra..."></textarea>
+			</div>
+			<div class="text-max">
+				<img src="images/icon-error.svg" alt=""><p> Máx. de 8 letras</p>
+			</div>
+			<div class="buttons buttons-game">
+				<button id="btn-add" class="add-word" onclick="guardaryEmpezar()">Guardar y empezar</button>
+				<button id="btn-cancelar" class="add-word" onclick="cancelar()">Cancelar</button>
+			</div>
+		</section>
+		
+	</main>
+	<script src="scripts.js"></script>
+</body>
+</html>
