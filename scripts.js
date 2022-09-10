@@ -101,6 +101,7 @@ function atras() {
 	btnDesistir.disabled = false;
 	btnNew.disabled = false;
 	messageLoser.classList.add("hidden")
+	foo.classList.add("hidden")
 }
 
 function obtenerpalabra () {
