@@ -24,6 +24,7 @@
 				<div class="word">
 				</div>
 			</div>
+			<button class="pista" onclick="obtenerPista()">Obtener una pista</button>
 			<div class="keyword">
 				<button class="letter">A</button>
 				<button class="letter">B</button>
@@ -54,6 +55,7 @@
 				<button class="letter">Z</button>
 			</div>
 			<div class="buttons buttons-game">
+				<button class="add-word" id="btn-atras" onclick="atras()"><</button>
 				<button class="add-word" id="btn-nuevojuego"  onclick="nuevoJuego()">Nuevo juego</button>
 				<button class="add-word" id="btn-desistir" onclick="desistir()">Desistir</button>
 			</div>
@@ -61,6 +63,11 @@
 			<div class="messageLoser hidden" >
 				<p>¡¡Perdiste!!</p>
 				<p id="palabraSecreta"></p>
+				<button class="btn-aceptar" onclick="aceptar()">Aceptar</button>
+			</div>
+
+			<div class="messageWinner hidden" >
+				<p>¡¡Ganaste!!</p>
 				<button class="btn-aceptar" onclick="aceptar()">Aceptar</button>
 			</div>
 		</section>

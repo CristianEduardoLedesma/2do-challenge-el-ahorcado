@@ -1,7 +1,8 @@
-/*Juego*/
+/**/
 String.prototype.replaceAt = function(index, replacement) {
     return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
+
 /*Vector de palabras */
 let palabras = ["JUEGO","PANTALLA","CONSOLA","CASA","MESA","SILLA"];
 
@@ -17,11 +18,12 @@ const palabraSecreta = document.getElementById("palabraSecreta");
 const btnStart = document.querySelector(".start");
 const btnAddWords = document.querySelector(".add-word");
 const btnGuardar = document.getElementById("btn-add");
-const btnNew = document.getElementById("btn-nuevojuego");
+const btnNew = document.querySelector("#btn-nuevojuego");
 const btnCancelar = document.getElementById(".btn-cancelar");
-const btnDesistir = document.getElementById(".btn-desistir");
+const btnDesistir = document.querySelector("#btn-desistir");
 const btn_letras = document.querySelectorAll(".keyword button");
 const btn_aceptar = document.querySelector(".btn-aceptar");
+const btn_atras = document.querySelector(".btn-atras");
 
 //secciones
 const sectionStart = document.querySelector(".section-start");
@@ -29,11 +31,13 @@ const sectionGame = document.querySelector(".section-game");
 const sectionAddWords = document.querySelector(".section-add-words");
 const foo = document.getElementById("foo");
 const messageLoser = document.querySelector(".messageLoser");
-
+const messageWinner = document.querySelector(".messageWinner");
+const pista = document.querySelector(".pista");
 //sonidos
 const musicbtn = new Audio('sound/cork-85200.mp3');
 const musicJuego = new Audio('sound/click-47609.mp3');
 const songLoser = new Audio('sound/Loser.mp3');
+const songWinner = new Audio('sound/winner.mp3');
 
 /*Funciones de mostrar y ocultar secciones*/
 function iniciarJuego(){
@@ -43,6 +47,7 @@ function iniciarJuego(){
 	foo.classList.add("hidden")
 	obtenerpalabra();
 	resetValores();
+	
 }
 
 function agregarPalabra(){
@@ -79,9 +84,27 @@ function desistir() {
 	messageLoser.classList.remove("hidden")
 }
 
+function aceptar () {
+	messageLoser.classList.add("hidden")
+	messageWinner.classList.add("hidden")
+	btnDesistir.disabled = false;
+	btnNew.disabled = false;
+	iniciarJuego();
+}
+
+function atras() {
+	musicbtn.play();
+	sectionStart.classList.remove("hidden")
+	sectionGame.classList.add("hidden")
+	btnDesistir.disabled = false;
+	btnNew.disabled = false;
+	messageLoser.classList.add("hidden")
+}
+
 function obtenerpalabra () {
 	var numero = Math.floor(Math.random() * palabras.length);
 	palabra = palabras[numero];
+	;
 	/*obtener palabra con guiones*/
 	palabraGuiones = palabra.replace(/./g, "_ ");
 	/*mostrar palabras con guiones en el HTML*/
@@ -101,10 +124,16 @@ function resetValores(){
 	} 
 	errores = 0;
 	imagenAhoracado.src = `images/img0.png`;
+	pista.innerHTML = "Obtener una pista";
+}
+
+function obtenerPista(){
+	pista.innerHTML = "Comienza con la letra " + palabra[0]  
 }
 
 function click_letras(event){
 	let bandera = 0;
+	let bandera2 = 0;
 	const button = event.target;
 	button.disabled = true;
 	const letra = button.innerHTML.toUpperCase();
@@ -129,17 +158,33 @@ function click_letras(event){
 		for (var i = 0; i < btn_letras.length; i++) {
 			btn_letras[i].disabled = true;
 		}
+		console.log(palabraGuiones);
 		palabraSecreta.innerHTML = "La palabra era: " + palabra;
 		messageLoser.classList.remove("hidden")
 		songLoser.play();
 		songLoser.volume = 0.1;
+		btnDesistir.disabled = true;
+		btnNew.disabled = true;
+		
+	}
+	//comparacion para ganar
+	for (var i = 0; i < palabra.length; i++) {
+		if(palabraGuiones[i*2] != palabra[i]){
+			bandera2=1;
+		}
+		
+	}
+	if(bandera2 == 0){
+		messageWinner.classList.remove("hidden")
+		songWinner.play()
+		songLoser.volume = 0.1;
+		btnDesistir.disabled = true;
+		btnNew.disabled = true;
+
 	}
 }
 
-function aceptar () {
-	messageLoser.classList.add("hidden")
-	iniciarJuego();
-}
+
 
 btnStart.onclick = iniciarJuego;
 btnAddWords.onclick = agregarPalabra;
@@ -148,4 +193,5 @@ btnDesistir.onclick = desistir;
 btnGuardar.onclick = guardaryEmpezar;
 btnNew.onclick = nuevoJuego;
 btn_aceptar.onclick = aceptar;
-
+btn_atras.onclick = atras;
+pista.onclick = obtenerPista;

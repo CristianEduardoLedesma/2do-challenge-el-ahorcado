@@ -106,6 +106,17 @@ main {
 .buttons-game #btn-add {
 	color: #006000;
 }
+
+
+#btn-atras {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	font-size: 40px;
+}
 .text-max {
 	align-self: flex-start;
 	display: flex;
@@ -190,6 +201,23 @@ main {
 	font-size: 50px;
 	color: #006000;
 }
+
+.pista {
+	font-family: 'Kanit', sans-serif;
+	font-size: 18px;
+	color: white;
+	margin: 5px 0;
+	background-color: #001960;
+	border: none;
+	border-radius: 35px;
+	padding: 0 10px;
+}
+
+.pista:hover {
+	cursor: pointer;
+	box-shadow: 0px 10px 16px -4px rgba(0,0,0,0.9);
+}
+
 .section-start {
 	display: flex;
 	justify-content: center;
@@ -224,7 +252,7 @@ footer a {
 
 
 .messageLoser {
-	background: linear-gradient( #6089ff,#003adf,#001960,black);
+	background: linear-gradient( #ff6060,#ff0000,#bf0000,black);
 	box-shadow: 0px 10px 16px -4px rgba(0,0,0,0.9);
 	border-radius: 35px;
 	width: 300px;
@@ -260,6 +288,45 @@ footer a {
 	box-shadow: 0px 10px 16px -4px rgba(0,0,0,0.9);
 	transform: scale(1.1);
 }
+
+.messageWinner {
+	background: linear-gradient( #60ff60,#00bf00,#006000,black);
+	box-shadow: 0px 10px 16px -4px rgba(0,0,0,0.9);
+	border-radius: 35px;
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	top: 250px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.messageWinner p {
+	font-size: 25px;
+	color: white;
+	font-family: 'Kanit', sans-serif;
+}
+.messageWinner button {
+	border: none;
+	margin: 20px 0;
+	width: 150px;
+	height: 50px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #006000;
+	font-family: 'Kanit', sans-serif;
+	transition: 0.6s;
+	border-radius: 35px;
+}
+
+.messageWinner button:hover {	
+	cursor: pointer;
+	color: #60ff60;
+	box-shadow: 0px 10px 16px -4px rgba(0,0,0,0.9);
+	transform: scale(1.1);
+}
+
 
 .hidden {
 	display: none;
