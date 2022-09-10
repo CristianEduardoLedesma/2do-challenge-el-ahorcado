@@ -33,6 +33,7 @@ const messageLoser = document.querySelector(".messageLoser");
 //sonidos
 const musicbtn = new Audio('sound/cork-85200.mp3');
 const musicJuego = new Audio('sound/click-47609.mp3');
+const songLoser = new Audio('sound/Loser.mp3');
 
 /*Funciones de mostrar y ocultar secciones*/
 function iniciarJuego(){
@@ -128,11 +129,10 @@ function click_letras(event){
 		for (var i = 0; i < btn_letras.length; i++) {
 			btn_letras[i].disabled = true;
 		}
-		
-		
 		palabraSecreta.innerHTML = "La palabra era: " + palabra;
-		
 		messageLoser.classList.remove("hidden")
+		songLoser.play();
+		songLoser.volume = 0.1;
 	}
 }
 
