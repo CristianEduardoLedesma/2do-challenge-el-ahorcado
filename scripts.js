@@ -13,6 +13,7 @@ let palabraGuiones ="";
 let output = document.querySelector(".word");
 let imagenAhoracado = document.getElementById("img-ahorcado");
 const palabraSecreta = document.getElementById("palabraSecreta");
+const palabraAagregar = document.querySelector("#agregarPalabra");
 
 //botones
 const btnStart = document.querySelector(".start");
@@ -33,6 +34,7 @@ const foo = document.getElementById("foo");
 const messageLoser = document.querySelector(".messageLoser");
 const messageWinner = document.querySelector(".messageWinner");
 const pista = document.querySelector(".pista");
+
 //sonidos
 const musicbtn = new Audio('sound/cork-85200.mp3');
 const musicJuego = new Audio('sound/click-47609.mp3');
@@ -55,14 +57,21 @@ function agregarPalabra(){
 	sectionAddWords.classList.remove("hidden")
 	sectionStart.classList.add("hidden")
 	foo.classList.add("hidden")
+
 }
 
 function guardaryEmpezar(){
 	musicJuego.play();
-	sectionGame.classList.remove("hidden")
-	sectionAddWords.classList.add("hidden")
 	obtenerpalabra();
 	resetValores();
+	if(palabraAagregar.value != ""){
+		if(agregarpalabra() == true){
+			sectionGame.classList.remove("hidden")
+			sectionAddWords.classList.add("hidden")
+		}
+	}
+	palabraAagregar.value = "";
+	console.log(palabras);
 }
 
 function nuevoJuego(){
@@ -185,6 +194,18 @@ function click_letras(event){
 		btnNew.disabled = true;
 
 	}
+}
+
+
+function agregarpalabra(){
+	var palabravalida =  /^[a-z]/;
+	if( palabravalida.test(palabraAagregar.value) ){
+		palabras.push(palabraAagregar.value.toUpperCase());
+		return true;
+	}else{
+		alert('Palabra o texto no válido, sólo letras en minúsculas y sin acentos');
+	}
+	
 }
 
 
